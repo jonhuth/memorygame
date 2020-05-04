@@ -1,0 +1,71 @@
+body {
+    background: whitesmoke;
+    height: 100vh;
+    font-family: 'Fredoka One', cursive;
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2em;
+    justify-items: center;
+    perspective: 1000px;
+}
+
+.card {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .6s;
+}
+
+.card:active {
+    transform: scale(.97);
+    transition: transform .3s;
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    position: absolute;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    background: blueviolet;
+}
+
+.front {
+    transform: rotateY(180deg);
+}
+
+div.score-container {
+    position: relative;
+    font-size: 1.5em;
+    color: cyan;
+}
+
+div.score-container > * {
+    text-align: center;
+    margin: .3em;
+
+}
+
+div.returnbutton-container {
+    position: relative;
+    text-align: center;
+}
+
+button {
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border: 2px solid #4caf50;
+    border-radius: 4px;
+    background-color: #4caf50;
+}
+
+
